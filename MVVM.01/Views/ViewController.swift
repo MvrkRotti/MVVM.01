@@ -9,14 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: - IB Outlets
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passField: UITextField!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var label: UILabel!
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         viewModel.userButtonPressed(login: (loginField.text ?? ""), password: (passField.text ?? ""))
     }
-    @IBOutlet var label: UILabel!
-    
+
     var viewModel = ViewModel()
     
     func initialState() {
@@ -24,12 +26,15 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if loginField.text == User.logins[0].login || passField.text == User.logins[0].password {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-            welcomeVC.user = User.logins[0].login ?? " "}
-        else {
-            showAlert(title: "Sorry", message: "Check your login or password")
-            }
+        if loginField.text != User.logins[0].login || passField.text != User.logins[0].password {
+            showAlert(
+                title: "Ошибка!",
+                message: "Неверный логин или пароль",
+                textField: passField
+            )
+        } else {
+            guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+            welcomeVC.user = User.logins[0].login ?? "1" }
     } //Валидация полей и переход на след вью
     
     override func viewDidLoad() {
@@ -63,9 +68,11 @@ extension ViewController {
 } //Настройка кнопки
 
 extension ViewController {
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
