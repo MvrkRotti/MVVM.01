@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passField: UITextField!
     @IBOutlet var loginButton: UIButton!
-    @IBOutlet var label: UILabel!
+    @IBOutlet var statusTextLabel: UILabel!
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         viewModel.userButtonPressed(login: (loginField.text ?? ""), password: (passField.text ?? ""))
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var viewModel = ViewModel()
     
     func initialState() {
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        statusTextLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,14 +49,20 @@ class ViewController: UIViewController {
     func bindViewModel() {
         viewModel.statusText.bind({ (statusText) in
             DispatchQueue.main.async {
-                self.label.text = statusText
+                self.statusTextLabel.text = statusText
             }
         })
         viewModel.statusColor.bind({(statusColor) in
             DispatchQueue.main.async {
-                self.label.textColor = statusColor
+                self.statusTextLabel.textColor = statusColor
             }
         })
+    }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        loginField.text = ""
+        passField.text = ""
+        statusTextLabel.text = ""
     }
 }
 

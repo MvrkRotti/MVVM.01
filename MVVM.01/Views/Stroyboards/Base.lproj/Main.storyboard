@@ -86,10 +86,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="Slb-3Y-pQc" id="r1n-nm-DuM"/>
                         <outlet property="loginButton" destination="Jh6-hT-Jy9" id="bwG-bE-col"/>
                         <outlet property="loginField" destination="RhC-I8-kJw" id="9Uz-pW-F9X"/>
                         <outlet property="passField" destination="7Xp-VM-dhV" id="Aa0-KU-1Tv"/>
+                        <outlet property="statusTextLabel" destination="Slb-3Y-pQc" id="r1n-nm-DuM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -192,7 +192,7 @@
                     <navigationItem key="navigationItem" id="Hq1-g8-QZG">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="nWn-RZ-jyh">
                             <connections>
-                                <action selector="backButtonPressed:" destination="Sog-uE-bye" id="dNF-Pm-KWb"/>
+                                <segue destination="uO3-F9-ZQS" kind="unwind" unwindAction="unwindSegueWithSegue:" id="YI4-re-DsP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -201,6 +201,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUE-Ru-X5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="uO3-F9-ZQS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="61.607142857142854"/>
         </scene>
