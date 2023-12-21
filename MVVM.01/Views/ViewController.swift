@@ -28,13 +28,7 @@ class ViewController: UIViewController {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
             welcomeVC.user = User.logins[0].login ?? " "}
         else {
-                let alert = UIAlertController(
-                    title: "Sorry!",
-                    message: "Check your login or password",
-                    preferredStyle: .alert
-                )
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+            showAlert(title: "Sorry", message: "Check your login or password")
             }
     } //Валидация полей и переход на след вью
     
@@ -67,3 +61,12 @@ extension ViewController {
         loginButton.layer.cornerRadius = 10
     }
 } //Настройка кнопки
+
+extension ViewController {
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+}
