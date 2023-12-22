@@ -10,9 +10,12 @@ import Foundation
 struct User {
     let login: String?
     let password: String?
+    var city: String?
+    var age: String?
+    var email: String?
 }
 
 extension User {
     static var logins = [
-        User.init(login: "Daniss", password: "12345")]
+        User.init(login: "Daniss", password: "12345",city: "", age: "", email: "")]
 }

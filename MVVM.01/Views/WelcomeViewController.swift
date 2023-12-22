@@ -11,6 +11,9 @@ import Foundation
 class WelcomeViewController: UIViewController {
 
     @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var cityLabel: UITextField!
+    @IBOutlet var ageLabel: UITextField!
+    @IBOutlet var emailLabel: UITextField!
     
     var user = User.logins[0].login
     
@@ -18,6 +21,18 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         welcomeLabel.text = "Добро пожаловать, \(user ?? "")!"
+    }
+    @IBAction func confirmButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        _ = segue.destination as! InfoViewController
+        User.logins[0].city = cityLabel.text
+        User.logins[0].age = ageLabel.text
+        User.logins[0].email = emailLabel.text
+        
+        
     }
 }
 

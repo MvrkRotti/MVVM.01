@@ -158,6 +158,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fr-LZ-hcH">
                                 <rect key="frame" x="20" y="395" width="374" height="30"/>
                                 <state key="normal" title="Подтвердить данные"/>
+                                <connections>
+                                    <action selector="confirmButtonPressed:" destination="Sog-uE-bye" eventType="touchUpInside" id="TSu-Pr-Ib1"/>
+                                    <segue destination="P48-Y2-KxS" kind="presentation" identifier="segue" modalPresentationStyle="fullScreen" id="K9k-e1-46c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4AY-Ox-XcG"/>
@@ -197,6 +201,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ageLabel" destination="mwY-nK-mmg" id="3kh-Iw-AR3"/>
+                        <outlet property="cityLabel" destination="YlP-hp-a8e" id="Ezr-ZT-5AY"/>
+                        <outlet property="emailLabel" destination="9BR-zI-9e7" id="W2S-3N-XJC"/>
                         <outlet property="welcomeLabel" destination="3zT-h4-RBa" id="1dF-aD-O9t"/>
                     </connections>
                 </viewController>
@@ -204,6 +211,81 @@
                 <exit id="uO3-F9-ZQS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="61.607142857142854"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="AzM-D3-yDv">
+            <objects>
+                <viewController id="P48-Y2-KxS" customClass="InfoViewController" customModule="MVVM_01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fyt-Bn-hcE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поздравляем! Ваша анкета успешно создана." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR8-qL-5WH">
+                                <rect key="frame" x="20" y="74" width="374" height="75"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверим введённые вами данные." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJZ-Fd-dTu">
+                                <rect key="frame" x="20" y="179" width="374" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-im-7X5">
+                                <rect key="frame" x="20" y="232" width="81" height="186"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM7-aV-HGo">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-EX-1oh">
+                                        <rect key="frame" x="0.0" y="54" width="60" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-Pb-PLG">
+                                        <rect key="frame" x="0.0" y="108" width="81" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJx-fZ-OzE">
+                                        <rect key="frame" x="0.0" y="162" width="52.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SAl-6W-INu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cR8-qL-5WH" firstAttribute="top" secondItem="SAl-6W-INu" secondAttribute="top" constant="30" id="1vF-6e-oN5"/>
+                            <constraint firstItem="LJZ-Fd-dTu" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="Bx6-7s-xOB"/>
+                            <constraint firstItem="SAl-6W-INu" firstAttribute="trailing" secondItem="cR8-qL-5WH" secondAttribute="trailing" constant="20" id="KIJ-8P-gwQ"/>
+                            <constraint firstItem="JEi-im-7X5" firstAttribute="top" secondItem="LJZ-Fd-dTu" secondAttribute="bottom" constant="30" id="MwR-7h-mn7"/>
+                            <constraint firstItem="LJZ-Fd-dTu" firstAttribute="top" secondItem="cR8-qL-5WH" secondAttribute="bottom" constant="30" id="biK-pt-YsY"/>
+                            <constraint firstItem="JEi-im-7X5" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="bxj-FS-8wa"/>
+                            <constraint firstItem="cR8-qL-5WH" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="gfe-Nt-SyR"/>
+                            <constraint firstItem="SAl-6W-INu" firstAttribute="trailing" secondItem="LJZ-Fd-dTu" secondAttribute="trailing" constant="20" id="zHu-0x-cAo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZLL-dU-THs"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="cI2-Pb-PLG" id="baL-rO-sfm"/>
+                        <outlet property="cityLabel" destination="gt7-EX-1oh" id="OCI-hs-Ond"/>
+                        <outlet property="emailLabel" destination="QJx-fZ-OzE" id="E7u-Q9-zhn"/>
+                        <outlet property="nameLabel" destination="oM7-aV-HGo" id="PLx-Pa-4SC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-Eb-21i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="62"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wx3-en-RJ2">

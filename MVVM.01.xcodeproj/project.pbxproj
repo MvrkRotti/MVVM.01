@@ -17,6 +17,7 @@
 		CEC61D3A2B3350C200AE0953 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC61D392B3350C200AE0953 /* ViewModel.swift */; };
 		CEC61D3D2B33511A00AE0953 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC61D3C2B33511A00AE0953 /* Dynamic.swift */; };
 		CEC61D3F2B3363B900AE0953 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC61D3E2B3363B900AE0953 /* WelcomeViewController.swift */; };
+		CEEBDE4E2B36005000B1A7EF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBDE4D2B36005000B1A7EF /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CEC61D392B3350C200AE0953 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		CEC61D3C2B33511A00AE0953 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		CEC61D3E2B3363B900AE0953 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CEEBDE4D2B36005000B1A7EF /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				CEC61D232B334FF500AE0953 /* ViewController.swift */,
 				CEC61D3E2B3363B900AE0953 /* WelcomeViewController.swift */,
+				CEEBDE4D2B36005000B1A7EF /* InfoViewController.swift */,
 				CEC61D362B33503400AE0953 /* Stroyboards */,
 			);
 			path = Views;
@@ -195,6 +198,7 @@
 				CEC61D3D2B33511A00AE0953 /* Dynamic.swift in Sources */,
 				CEC61D202B334FF500AE0953 /* AppDelegate.swift in Sources */,
 				CEC61D222B334FF500AE0953 /* SceneDelegate.swift in Sources */,
+				CEEBDE4E2B36005000B1A7EF /* InfoViewController.swift in Sources */,
 				CEC61D3F2B3363B900AE0953 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
