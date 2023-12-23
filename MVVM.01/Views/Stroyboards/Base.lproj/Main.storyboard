@@ -150,7 +150,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ваш возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9BR-zI-9e7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ваш email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9BR-zI-9e7">
                                 <rect key="frame" x="102" y="311" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -261,17 +261,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c44-ph-L5A">
+                                <rect key="frame" x="60" y="712" width="294" height="30"/>
+                                <state key="normal" title="Удалить.">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3AW-Oo-Ue0" kind="unwind" unwindAction="unwindSegueWithSegue:" id="aHD-fD-Shc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SAl-6W-INu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cR8-qL-5WH" firstAttribute="top" secondItem="SAl-6W-INu" secondAttribute="top" constant="30" id="1vF-6e-oN5"/>
+                            <constraint firstItem="c44-ph-L5A" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="60" id="68c-rQ-f4i"/>
                             <constraint firstItem="LJZ-Fd-dTu" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="Bx6-7s-xOB"/>
                             <constraint firstItem="SAl-6W-INu" firstAttribute="trailing" secondItem="cR8-qL-5WH" secondAttribute="trailing" constant="20" id="KIJ-8P-gwQ"/>
                             <constraint firstItem="JEi-im-7X5" firstAttribute="top" secondItem="LJZ-Fd-dTu" secondAttribute="bottom" constant="30" id="MwR-7h-mn7"/>
                             <constraint firstItem="LJZ-Fd-dTu" firstAttribute="top" secondItem="cR8-qL-5WH" secondAttribute="bottom" constant="30" id="biK-pt-YsY"/>
                             <constraint firstItem="JEi-im-7X5" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="bxj-FS-8wa"/>
+                            <constraint firstItem="SAl-6W-INu" firstAttribute="trailing" secondItem="c44-ph-L5A" secondAttribute="trailing" constant="60" id="fL6-vT-Eqf"/>
                             <constraint firstItem="cR8-qL-5WH" firstAttribute="leading" secondItem="SAl-6W-INu" secondAttribute="leading" constant="20" id="gfe-Nt-SyR"/>
+                            <constraint firstItem="SAl-6W-INu" firstAttribute="bottom" secondItem="c44-ph-L5A" secondAttribute="bottom" constant="120" id="phI-uG-8F4"/>
                             <constraint firstItem="SAl-6W-INu" firstAttribute="trailing" secondItem="LJZ-Fd-dTu" secondAttribute="trailing" constant="20" id="zHu-0x-cAo"/>
                         </constraints>
                     </view>
@@ -279,11 +291,13 @@
                     <connections>
                         <outlet property="ageLabel" destination="cI2-Pb-PLG" id="baL-rO-sfm"/>
                         <outlet property="cityLabel" destination="gt7-EX-1oh" id="OCI-hs-Ond"/>
+                        <outlet property="deleteButton" destination="c44-ph-L5A" id="PsR-DF-K1H"/>
                         <outlet property="emailLabel" destination="QJx-fZ-OzE" id="E7u-Q9-zhn"/>
                         <outlet property="nameLabel" destination="oM7-aV-HGo" id="PLx-Pa-4SC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTj-Eb-21i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3AW-Oo-Ue0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2746" y="62"/>
         </scene>
